@@ -331,7 +331,7 @@ class BrowserApp {
         iframe.addEventListener('load', hideLoading);
         
         // Show loading when starting to navigate
-        const originalSrc = iframe.src;
+        let originalSrc = iframe.src;
         Object.defineProperty(iframe, 'src', {
             get: () => originalSrc,
             set: (value) => {
