@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CreateOS - Web Operating System</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/desktop.css">
+    <link rel="stylesheet" href="styles/taskbar.css">
+    <link rel="stylesheet" href="styles/window.css">
+    <link rel="stylesheet" href="styles/apps.css">
+    <link rel="stylesheet" href="styles/system.css">
+</head>
+<body>
+    <div id="desktop" class="desktop">
+        <!-- Desktop Background -->
+        <div class="desktop-background"></div>
+        
+        <!-- Desktop Icons -->
+        <div class="desktop-icons">
+            <div class="desktop-icon" data-app="file-explorer">
+                <div class="icon-image file-explorer-icon"></div>
+                <div class="icon-label">File Explorer</div>
+            </div>
+            <div class="desktop-icon" data-app="word">
+                <div class="icon-image word-icon"></div>
+                <div class="icon-label">Word</div>
+            </div>
+            <div class="desktop-icon" data-app="excel">
+                <div class="icon-image excel-icon"></div>
+                <div class="icon-label">Excel</div>
+            </div>
+            <div class="desktop-icon" data-app="powerpoint">
+                <div class="icon-image powerpoint-icon"></div>
+                <div class="icon-label">PowerPoint</div>
+            </div>
+            <div class="desktop-icon" data-app="browser">
+                <div class="icon-image browser-icon"></div>
+                <div class="icon-label">Web Browser</div>
+            </div>
+            <div class="desktop-icon" data-app="minesweeper">
+                <div class="icon-image minesweeper-icon"></div>
+                <div class="icon-label">Minesweeper</div>
+            </div>
+            <div class="desktop-icon" data-app="solitaire">
+                <div class="icon-image solitaire-icon"></div>
+                <div class="icon-label">Solitaire</div>
+            </div>
+        </div>
+        
+        <!-- Windows Container -->
+        <div id="windows-container"></div>
+        
+        <!-- Taskbar -->
+        <div class="taskbar">
+            <div class="start-button">
+                <div class="windows-logo"></div>
+                <span>Start</span>
+            </div>
+            
+            <div class="taskbar-apps" id="taskbar-apps"></div>
+            
+            <div class="system-tray">
+                <div class="system-time" id="system-time"></div>
+                <div class="system-icons">
+                    <div class="system-icon wifi-icon"></div>
+                    <div class="system-icon battery-icon"></div>
+                    <div class="system-icon speaker-icon"></div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Start Menu -->
+        <div class="start-menu" id="start-menu">
+            <div class="start-menu-header">
+                <div class="user-avatar"></div>
+                <div class="user-info">
+                    <div class="username">User</div>
+                    <div class="user-status">Online</div>
+                </div>
+            </div>
+            
+            <div class="start-menu-apps">
+                <div class="app-category">
+                    <h3>Recently Added</h3>
+                    <div class="app-grid">
+                        <div class="start-app" data-app="word">
+                            <div class="app-icon word-icon"></div>
+                            <span>Word</span>
+                        </div>
+                        <div class="start-app" data-app="excel">
+                            <div class="app-icon excel-icon"></div>
+                            <span>Excel</span>
+                        </div>
+                        <div class="start-app" data-app="powerpoint">
+                            <div class="app-icon powerpoint-icon"></div>
+                            <span>PowerPoint</span>
+                        </div>
+                        <div class="start-app" data-app="browser">
+                            <div class="app-icon browser-icon"></div>
+                            <span>Browser</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="app-category">
+                    <h3>Games</h3>
+                    <div class="app-grid">
+                        <div class="start-app" data-app="minesweeper">
+                            <div class="app-icon minesweeper-icon"></div>
+                            <span>Minesweeper</span>
+                        </div>
+                        <div class="start-app" data-app="solitaire">
+                            <div class="app-icon solitaire-icon"></div>
+                            <span>Solitaire</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="app-category">
+                    <h3>System</h3>
+                    <div class="app-grid">
+                        <div class="start-app" data-app="file-explorer">
+                            <div class="app-icon file-explorer-icon"></div>
+                            <span>File Explorer</span>
+                        </div>
+                        <div class="start-app" data-app="settings">
+                            <div class="app-icon settings-icon"></div>
+                            <span>Settings</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="start-menu-footer">
+                <div class="power-options">
+                    <button class="power-btn">
+                        <span class="power-icon"></span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Context Menu -->
+    <div class="context-menu" id="context-menu">
+        <div class="context-item" data-action="refresh">Refresh</div>
+        <div class="context-item" data-action="personalize">Personalize</div>
+        <hr class="context-separator">
+        <div class="context-item" data-action="new-folder">New Folder</div>
+        <div class="context-item" data-action="properties">Properties</div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="js/utils.js"></script>
+    <script src="js/window-manager.js"></script>
+    <script src="js/desktop.js"></script>
+    <script src="js/taskbar.js"></script>
+    <script src="js/start-menu.js"></script>
+    <script src="js/apps/file-explorer.js"></script>
+    <script src="js/apps/office.js"></script>
+    <script src="js/apps/browser.js"></script>
+    <script src="js/apps/games.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
