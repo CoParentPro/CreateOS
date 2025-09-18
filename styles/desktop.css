@@ -1,0 +1,288 @@
+/* Desktop Styles */
+.desktop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.desktop-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background-size: cover;
+    background-position: center;
+    z-index: 1;
+}
+
+/* Alternative backgrounds */
+.desktop-background.windows-default {
+    background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+}
+
+.desktop-background.nature {
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800"><defs><linearGradient id="sky" x1="0%" y1="0%" x2="0%" y2="100%"><stop offset="0%" style="stop-color:%2387CEEB;stop-opacity:1" /><stop offset="100%" style="stop-color:%23E0F6FF;stop-opacity:1" /></linearGradient></defs><rect width="1200" height="800" fill="url(%23sky)"/></svg>'),
+               linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background-size: cover;
+}
+
+.desktop-icons {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    gap: 20px;
+    max-width: 300px;
+    z-index: 2;
+}
+
+.desktop-icon {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 80px;
+    height: 80px;
+    cursor: pointer;
+    padding: 8px;
+    border-radius: 8px;
+    transition: var(--transition);
+    color: var(--white);
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+.desktop-icon:hover {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+}
+
+.desktop-icon.selected {
+    background: rgba(0, 120, 212, 0.3);
+    backdrop-filter: blur(10px);
+}
+
+.icon-image {
+    width: 48px;
+    height: 48px;
+    margin-bottom: 4px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.3));
+}
+
+.icon-label {
+    font-size: 11px;
+    font-weight: 400;
+    text-align: center;
+    word-wrap: break-word;
+    max-width: 100%;
+    line-height: 1.2;
+}
+
+/* Icon Images - Using CSS gradients and shapes for now */
+.file-explorer-icon {
+    background: linear-gradient(135deg, #FFD700 0%, #FFA500 100%);
+    border-radius: 4px;
+    position: relative;
+}
+
+.file-explorer-icon::before {
+    content: '📁';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 24px;
+}
+
+.word-icon {
+    background: linear-gradient(135deg, #2B579A 0%, #1F4788 100%);
+    border-radius: 4px;
+    position: relative;
+}
+
+.word-icon::before {
+    content: 'W';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.excel-icon {
+    background: linear-gradient(135deg, #217346 0%, #0F5132 100%);
+    border-radius: 4px;
+    position: relative;
+}
+
+.excel-icon::before {
+    content: 'X';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.powerpoint-icon {
+    background: linear-gradient(135deg, #D24726 0%, #B02A0A 100%);
+    border-radius: 4px;
+    position: relative;
+}
+
+.powerpoint-icon::before {
+    content: 'P';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.browser-icon {
+    background: linear-gradient(135deg, #4285F4 0%, #1a73e8 100%);
+    border-radius: 50%;
+    position: relative;
+}
+
+.browser-icon::before {
+    content: '🌐';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 24px;
+}
+
+.minesweeper-icon {
+    background: linear-gradient(135deg, #808080 0%, #606060 100%);
+    border-radius: 4px;
+    position: relative;
+    border: 2px solid #404040;
+}
+
+.minesweeper-icon::before {
+    content: '💣';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 20px;
+}
+
+.solitaire-icon {
+    background: linear-gradient(135deg, #228B22 0%, #006400 100%);
+    border-radius: 8px;
+    position: relative;
+}
+
+.solitaire-icon::before {
+    content: '♠';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 24px;
+}
+
+.settings-icon {
+    background: linear-gradient(135deg, #666666 0%, #404040 100%);
+    border-radius: 50%;
+    position: relative;
+}
+
+.settings-icon::before {
+    content: '⚙️';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 24px;
+}
+
+/* Windows Container */
+#windows-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: calc(100% - 40px); /* Account for taskbar */
+    z-index: 3;
+    pointer-events: none;
+}
+
+#windows-container > * {
+    pointer-events: all;
+}
+
+/* Selection Rectangle */
+.selection-rectangle {
+    position: absolute;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(5px);
+    z-index: 2;
+    pointer-events: none;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .desktop-icons {
+        top: 10px;
+        left: 10px;
+        gap: 16px;
+        max-width: 250px;
+    }
+    
+    .desktop-icon {
+        width: 70px;
+        height: 70px;
+    }
+    
+    .icon-image {
+        width: 40px;
+        height: 40px;
+    }
+    
+    .icon-label {
+        font-size: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .desktop-icons {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 12px;
+    }
+    
+    .desktop-icon {
+        width: 60px;
+        height: 60px;
+    }
+    
+    .icon-image {
+        width: 32px;
+        height: 32px;
+    }
+    
+    .icon-label {
+        font-size: 9px;
+    }
+}
